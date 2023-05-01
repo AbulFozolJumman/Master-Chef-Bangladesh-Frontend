@@ -10,49 +10,33 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <div>
-            <footer className="bg-dark text-center text-white">
+            <footer className="bg-dark text-center text-white mb-0 mt-5">
                 <div className="container p-4 pb-0">
-                    <section className="">
-                        <form action="">
-                            <div className="row d-flex justify-content-center">
-                                <div className="col-auto">
-                                    <p className="pt-2">
-                                        <strong>Sign up for our newsletter</strong>
-                                    </p>
-                                </div>
-
-                                <div className="col-md-5 col-12">
-                                    <div className="form-outline form-white mb-4">
-                                        <input type="email" id="form5Example2" className="form-control" />
-                                        <label className="form-label" for="form5Example2">Email address</label>
-                                    </div>
-                                </div>
-
-                                <div className="col-auto">
-                                    <button type="submit" className="btn btn-outline-light mb-4">
-                                        Subscribe
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
+                    <section>
+                        <p className="d-flex justify-content-center align-items-center">
+                            <span className="me-3">Register for free</span>
+                            <button type="button" className="btn btn-outline-light btn-rounded">
+                                Sign up!
+                            </button>
+                        </p>
                     </section>
                 </div>
 
-                <div class="container p-4 pb-0">
+                <div className="container p-4 pb-0">
                     <h2>Follow us on</h2>
-                    <section class="mb-4">
-                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                        ><i class="fab fa-facebook-f"><FaFacebook/></i></a>
-                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                        ><i class="fab fa-twitter"><FaTwitter/></i></a>
-                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                        ><i class="fab fa-google"><FaGoogle/></i></a>
-                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                        ><i class="fab fa-instagram"><FaGithub/></i></a>
-                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                        ><i class="fab fa-linkedin-in"><FaInstagram/></i></a>
-                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                        ><i class="fab fa-github"><FaLinkedinIn/></i></a>
+                    <section className="mb-4">
+                        <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                        ><i className="fab fa-facebook-f"><FaFacebook /></i></a>
+                        <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                        ><i className="fab fa-twitter"><FaTwitter /></i></a>
+                        <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                        ><i className="fab fa-google"><FaGoogle /></i></a>
+                        <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                        ><i className="fab fa-instagram"><FaGithub /></i></a>
+                        <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                        ><i className="fab fa-linkedin-in"><FaInstagram /></i></a>
+                        <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                        ><i className="fab fa-github"><FaLinkedinIn /></i></a>
                     </section>
                 </div>
 

@@ -11,11 +11,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Blog from './components/Blog/Blog';
 import Login from './components/Login-Register/Login';
 import Register from './components/Login-Register/Register';
+import ErrorPage from './components/Error/Error';
+import ShowError from './components/Error/ShowError';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -32,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/error",
+        element: <ShowError></ShowError>
       }
     ],
   },

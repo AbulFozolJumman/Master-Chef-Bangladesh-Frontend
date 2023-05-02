@@ -41,7 +41,7 @@ const Footer = () => {
                 </div>
 
                 <div className="text-center p-3">
-                    © 2020 Copyright: <Link className='text-decoration-none text-white fw-bold' to="/">Master Chef Bangladesh</Link>
+                    © 2023 Copyright: <Link className='text-decoration-none text-white fw-bold' to="/">Master Chef Bangladesh</Link>
                 </div>
             </footer>
         </div>

@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
 
 const ChefCard = ({ chef }) => {
-    const { name, numberOfRecipes, likes, yearsOfExperience, picture } = chef;
+    const { name, numberOfRecipes, likes, yearsOfExperience, picture, id } = chef;
 
     return (
         <Col>
@@ -15,7 +15,7 @@ const ChefCard = ({ chef }) => {
                     <h4>Experience: {yearsOfExperience} Years</h4>
                     <h5>Number of Recipes: {numberOfRecipes}</h5>
                     <h5>Likes: {likes}</h5>
-                    <Link to="/ChefDetails">
+                    <Link to={`/ChefDetails/${id}`}>
                         <button className='btn btn-primary'>View Recipes</button>
                     </Link>
 

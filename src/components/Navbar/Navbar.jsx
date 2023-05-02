@@ -16,7 +16,6 @@ const Navigation = () => {
                         <Link className='text-decoration-none text-white fw-bold p-3' to="/blog">Blog</Link>
                         <Link className='text-decoration-none text-white fw-bold p-3' to="/login">Login</Link>
                         <Link className='text-decoration-none text-white fw-bold p-3' to="/error">Error</Link>
-                        <Link className='text-decoration-none text-white fw-bold p-3' to="/chefs">chefs</Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

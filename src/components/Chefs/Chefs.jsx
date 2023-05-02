@@ -1,19 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useContext } from 'react';
 import ChefCard from '../ChefCard/ChefCard';
 import Row from 'react-bootstrap/Row';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Chefs = () => {
-    const [chefs, setChefs] = useState([]);
-    useEffect(() => {
-        const fetchData = async () => {
-          const response = await fetch("https://master-chef-bangladesh-server-abulfozoljumman.vercel.app/chefs");
-          const newData = await response.json();
-          setChefs(newData);
-        };
       
-        fetchData();
-      }, []);
-      
+    const {chefs} = useContext(AuthContext);
 
     return (
         <div>

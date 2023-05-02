@@ -6,6 +6,7 @@ export default function ErrorPage() {
 
     return (
         <div id="error-page">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/021/570/600/small/website-error-screen-free-png.png" alt="" />
             <h1>Oopsss!</h1>
             <h2>Sorry, an unexpected error has occurred.</h2>
             <h2>

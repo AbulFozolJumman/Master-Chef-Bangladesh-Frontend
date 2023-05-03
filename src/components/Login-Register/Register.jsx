@@ -1,18 +1,43 @@
-import React from 'react';
+import { useContext } from "react";
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Register = () => {
+    const { createUser, updateUserData, error, setError } = useContext(AuthContext);
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        setError("")
+        const form = event.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(name, photo, email, password);
+
+        createUser(email, password)
+            .then((result) => {
+                const signedUser = result.user;
+                console.log(signedUser);
+                updateUserData(signedUser, name, photo)
+                form.reset()
+            })
+            .catch((error) => {
+                setError(error.message);
+            });
+    }
+
     return (
         <div>
             <Container className='w-25 mx-auto'>
                 <h2>Please Register!</h2>
-                <Form>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form onSubmit={handleSubmit}>
+                    <Form.Group className="mb-3" controlId="formBasicName">
                         <Form.Label>Name</Form.Label>
                         <Form.Control type="text" name='name' placeholder="Your Name" required />
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Group className="mb-3" controlId="formBasicPhoto">
                         <Form.Label>Photo URL</Form.Label>
                         <Form.Control type="text" name='photo' placeholder="Photo URL" required />
                     </Form.Group>
@@ -30,12 +55,12 @@ const Register = () => {
                     <br />
                     <Form.Text className="text-secondary">
                         Already Have an Account? <Link to="/login">Login</Link>
-                    </Form.Text>
+                    </Form.Text> <br />
                     <Form.Text className="text-success">
 
-                    </Form.Text>
+                    </Form.Text> <br />
                     <Form.Text className="text-danger">
-
+                        {error}
                     </Form.Text>
                 </Form>
             </Container>

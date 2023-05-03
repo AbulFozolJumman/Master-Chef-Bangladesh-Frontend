@@ -1,14 +1,16 @@
 import React, { createContext } from 'react';
 // import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
-// import app from '../firebase/firebase.config';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
+import app from '../Firebase/firebase.config';
 
 export const AuthContext = createContext(null);
 
-// const auth = getAuth(app);
+const auth = getAuth(app);
 
 const AuthProvider = ({children}) => {
+    const [error, setError] = useState("")
 
     const [chefs, setChefs] = useState([]);
     useEffect(() => {
@@ -24,10 +26,16 @@ const AuthProvider = ({children}) => {
     // const [user, setUser] = useState(null);
     // const [loading, setLoading] = useState(true);
     
-    // const createUser = (email, password) => {
+    const createUser = (email, password) => {
     //     setLoading(true);
-    //     return createUserWithEmailAndPassword(auth, email, password);
-    // }
+        return createUserWithEmailAndPassword(auth, email, password);
+    }
+
+    const updateUserData = (user, name, photo) => {
+        updateProfile(user, {
+            displayName: name, photoURL: photo
+        })
+    }
 
     // const signIn = (email, password) => {
     //     setLoading(true);
@@ -56,7 +64,10 @@ const AuthProvider = ({children}) => {
         chefs,
         // user,
         // loading,
-        // createUser,
+        createUser,
+        updateUserData,
+        error, 
+        setError,
         // signIn,
         // logOut
     }

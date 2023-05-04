@@ -4,6 +4,8 @@ import Chefs from '../Chefs/Chefs';
 import { AuthContext } from '../Provider/AuthProvider';
 import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner';
+import CustomerReview from '../CustomerReview/CustomerReview';
+import ServiceSection from '../OurServices/ServicesSection';
 
 // This is website Home page
 const Home = () => {
@@ -18,6 +20,8 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Chefs></Chefs>
+            <CustomerReview></CustomerReview>
+            <ServiceSection></ServiceSection>
         </div>
     );
 };

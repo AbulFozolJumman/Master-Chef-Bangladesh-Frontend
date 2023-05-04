@@ -1,0 +1,18 @@
+.active-link {
+    color: aqua;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 1rem;
+  }
+.link{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 1rem;
+}
+.link:hover{
+  color: yellow;
+}
+.active-link:hover{
+  color: yellow;
+}

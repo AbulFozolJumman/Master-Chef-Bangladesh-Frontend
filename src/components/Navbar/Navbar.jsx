@@ -4,6 +4,8 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import {  NavLink } from 'react-router-dom';
+import "./Navbar.css"
 
 const Navigation = () => {
     const { user, userSignOut } = useContext(AuthContext);
@@ -25,17 +27,17 @@ const Navigation = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">
-                        <Link className='text-decoration-none text-white fw-bold p-3' to="/">Home</Link>
-                        <Link className='text-decoration-none text-white fw-bold p-3' to="/blog">Blog</Link>
+                        <NavLink className={({ isActive }) => (isActive ? 'active-link' : 'link')} to="/">Home</NavLink>
+                        <NavLink  className={({ isActive }) => (isActive ? 'active-link' : 'link')} to="/blog">Blog</NavLink>
                         {
                             user ?
                             <>
-                                <img title={user.displayName} style={{ height: "50px", borderRadius: "50%" }} src={user.photoURL} alt="" />
-                                <Link className='text-decoration-none text-white fw-bold p-3' onClick={handleSignOut}>Sign out</Link>
+                                <img title={user.displayName} style={{ height: "50px", width: "50px", borderRadius: "50%" }} src={user.photoURL} alt="" />
+                                <NavLink  className='link' onClick={handleSignOut}>Sign out</NavLink>
                             </>
-                            : <Link className='text-decoration-none text-white fw-bold p-3' to="/login">Login</Link>
+                            : <NavLink  className={({ isActive }) => (isActive ? 'active-link' : 'link')} to="/login">Login</NavLink>
                         }
-                        <Link className='text-decoration-none text-white fw-bold p-3' to="/error">Error</Link>
+                        <NavLink  className={({ isActive }) => (isActive ? 'active-link' : 'link')} to="/error">Error</NavLink>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

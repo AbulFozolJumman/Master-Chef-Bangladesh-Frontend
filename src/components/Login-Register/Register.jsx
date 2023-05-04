@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { Button, Container, Form } from 'react-bootstrap';
+import { Button, Container, Form, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Register = () => {
-    const { createUser, updateUserData, error, setError } = useContext(AuthContext);
+    const { createUser, updateUserData, error, setError, loading } = useContext(AuthContext);
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -26,6 +26,13 @@ const Register = () => {
             .catch((error) => {
                 setError(error.message);
             });
+    }
+
+    if(loading){
+        return <Button className="mx-auto m-5 d-block gap-3 align-items center d-flex" variant="primary" disabled>
+        <Spinner animation="border" variant="danger" />
+        <span className="fw-bold">Loading...</span>
+      </Button>
     }
 
     return (

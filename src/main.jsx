@@ -15,6 +15,7 @@ import ErrorPage from './components/Error/Error';
 import ShowError from './components/Error/ShowError';
 import ChefDetails from './components/ChefDetails/ChefDetails';
 import AuthProvider from './components/Provider/AuthProvider';
+import PrivateRoute from './components/PrivateRouter/PrivateRouter';
 
 const router = createBrowserRouter([
   {
@@ -44,7 +45,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/ChefDetails",
-        element: <ChefDetails></ChefDetails>
+        element: <PrivateRoute>
+          <ChefDetails></ChefDetails>
+        </PrivateRoute>
       }
     ],
   },

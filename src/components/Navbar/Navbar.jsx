@@ -32,7 +32,7 @@ const Navigation = () => {
                         {
                             user ?
                             <>
-                                <img title={user.displayName} style={{ height: "50px", width: "50px", borderRadius: "50%" }} src={user.photoURL} alt="" />
+                                <img title={user?.displayName} style={{ height: "50px", width: "50px", borderRadius: "50%" }} src={user?.photoURL} alt="" />
                                 <NavLink  className='link' onClick={handleSignOut}>Sign out</NavLink>
                             </>
                             : <NavLink  className={({ isActive }) => (isActive ? 'active-link' : 'link')} to="/login">Login</NavLink>

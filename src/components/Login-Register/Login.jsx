@@ -4,14 +4,13 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../Provider/AuthProvider';
-import Spinner from 'react-bootstrap/Spinner';
 
 // This is website Login page
 const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
-    const { signIn, setUser, error, setError, googleSignIn, githubSignIn, loading } = useContext(AuthContext);
+    const { signIn, setUser, error, setError, googleSignIn, githubSignIn } = useContext(AuthContext);
 
     // User email/password sign in handler
     const handleUserSignIn = (event) => {
@@ -24,7 +23,6 @@ const Login = () => {
         signIn(email, password)
             .then((result) => {
                 const loggedUser = result.user;
-                // console.log(loggedUser);
                 setUser(loggedUser)
                 navigate(from, { replace: true })
                 form.reset()
@@ -58,7 +56,6 @@ const Login = () => {
                 const githubUser = result.user;
                 setUser(githubUser);
                 navigate(from, { replace: true })
-                // console.log(githubUser);
             })
             .catch((error) => {
                 console.log(error.message);

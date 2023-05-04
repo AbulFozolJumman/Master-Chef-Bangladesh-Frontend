@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { Button, Container, Form, Spinner } from 'react-bootstrap';
+import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from "../Provider/AuthProvider";
 
 // This is website register page
 const Register = () => {
-    const { createUser, updateUserData, error, setError, loading } = useContext(AuthContext);
+    const { createUser, updateUserData, error, setError } = useContext(AuthContext);
 
     // Form submit handler
     const handleSubmit = (event) => {

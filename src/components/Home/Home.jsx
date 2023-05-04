@@ -5,6 +5,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner';
 
+// This is website Home page
 const Home = () => {
     const {loading} = useContext(AuthContext);
     if(loading){

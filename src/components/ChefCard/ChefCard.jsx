@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
 
+// All the Chefs information of cards here
 const ChefCard = ({ chef }) => {
     const { name, numberOfRecipes, likes, yearsOfExperience, picture, id } = chef;
 

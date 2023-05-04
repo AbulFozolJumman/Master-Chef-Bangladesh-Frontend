@@ -17,6 +17,7 @@ import ChefDetails from './components/ChefDetails/ChefDetails';
 import AuthProvider from './components/Provider/AuthProvider';
 import PrivateRoute from './components/PrivateRouter/PrivateRouter';
 
+// All the website router
 const router = createBrowserRouter([
   {
     path: "/",

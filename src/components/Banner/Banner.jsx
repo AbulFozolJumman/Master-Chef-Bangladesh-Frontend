@@ -1,6 +1,7 @@
 import React from 'react';
 import "./Banner.css"
 
+// Website Banner
 const Banner = () => {
     return (
         <div id='banner'>

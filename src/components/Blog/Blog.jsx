@@ -5,8 +5,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
 import BlogPDF from './BlogPDF';
 
-
-
+// Site Blog
 const Blog = () => {
     const [title, setTitle] = useState('My Blog Title');
     const [content, setContent] = useState('Lorem ipsum dolor sit amet, consectetur adipiscing elit.');

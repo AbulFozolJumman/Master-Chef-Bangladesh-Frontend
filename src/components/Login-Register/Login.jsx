@@ -6,18 +6,19 @@ import { FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../Provider/AuthProvider';
 import Spinner from 'react-bootstrap/Spinner';
 
+// This is website Login page
 const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
     const { signIn, setUser, error, setError, googleSignIn, githubSignIn, loading } = useContext(AuthContext);
 
+    // User email/password sign in handler
     const handleUserSignIn = (event) => {
         event.preventDefault()
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        // console.log(email, password);
 
         signIn(email, password)
             .then((result) => {
@@ -32,6 +33,7 @@ const Login = () => {
             });
     };
 
+    // User Google sign in handler
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then((result) => {
@@ -46,6 +48,7 @@ const Login = () => {
             });
     }
 
+    // User Github sign in handler
     const handleGithubSignIn = () => {
         githubSignIn()
             .then((result) => {
@@ -59,7 +62,7 @@ const Login = () => {
             });
     }
 
-    
+    // Loading spinner
     if(loading){
         return <Button className="mx-auto m-5 d-block gap-3 align-items center d-flex" variant="primary" disabled>
         <Spinner animation="border" variant="danger" />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Document, Page, View, Text } from '@react-pdf/renderer';
 
+// Blog PDF generator
 const BlogPDF = ({ title, content }) => {
     return (
         <Document>

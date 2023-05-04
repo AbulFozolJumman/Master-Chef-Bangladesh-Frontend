@@ -7,11 +7,11 @@ import { AuthContext } from '../Provider/AuthProvider';
 import {  NavLink } from 'react-router-dom';
 import "./Navbar.css"
 
+// This is website Nav section
 const Navigation = () => {
     const { user, userSignOut } = useContext(AuthContext);
-    // console.log(user);
 
-    
+    // User Sign out handler
     const handleSignOut = () => {
         userSignOut()
         .then(() => {})

@@ -1,5 +1,6 @@
 import React from 'react';
 
+// This is default Error testing page
 const ShowError = (props) => {
     return (
         <div>

@@ -3,9 +3,11 @@ import { Button, Container, Form, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from "../Provider/AuthProvider";
 
+// This is website register page
 const Register = () => {
     const { createUser, updateUserData, error, setError, loading } = useContext(AuthContext);
 
+    // Form submit handler
     const handleSubmit = (event) => {
         event.preventDefault()
         setError("")
@@ -15,7 +17,7 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name, photo, email, password);
-
+        
         createUser(email, password)
             .then((result) => {
                 const signedUser = result.user;
@@ -28,6 +30,7 @@ const Register = () => {
             });
     }
 
+    // Loading spinner
     if(loading){
         return <Button className="mx-auto m-5 d-block gap-3 align-items center d-flex" variant="primary" disabled>
         <Spinner animation="border" variant="danger" />

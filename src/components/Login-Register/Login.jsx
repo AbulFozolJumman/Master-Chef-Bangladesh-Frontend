@@ -38,7 +38,7 @@ const Login = () => {
         googleSignIn()
             .then((result) => {
                 const googleUser = result.user;
-                // console.log(googleUser);
+                console.log(googleUser);
                 // navigate(location.state.pathname || "/")
                 setUser(googleUser);
                 navigate(from, { replace: true })

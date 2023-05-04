@@ -17,6 +17,7 @@ const githubProvider = new GithubAuthProvider();
 const AuthProvider = ({children}) => {
     const [error, setError] = useState("")
     const [chefs, setChefs] = useState([]);
+    const [reload, setReload] = useState(false);
 
     // Fetching data by useEffect
     useEffect(() => {
@@ -40,7 +41,7 @@ const AuthProvider = ({children}) => {
 
     // Firebase updateUserData for update displayName and photoURL
     const updateUserData = (user, name, photo) => {
-        updateProfile(user, {
+        return updateProfile(user, {
             displayName: name, photoURL: photo
         })
     }
@@ -80,7 +81,7 @@ const AuthProvider = ({children}) => {
         return () => {
             unsubscribe();
         }
-    }, [])
+    }, [reload])
 
     // All the context value
     const authInfo = {
@@ -95,7 +96,8 @@ const AuthProvider = ({children}) => {
         signIn,
         googleSignIn,
         githubSignIn,
-        userSignOut
+        userSignOut,
+        setReload,
     }
 
     return (

@@ -5,7 +5,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 // This is website register page
 const Register = () => {
-    const { createUser, updateUserData, error, setError } = useContext(AuthContext);
+    const { createUser, updateUserData, error, setError, setReload } = useContext(AuthContext);
 
     // Form submit handler
     const handleSubmit = (event) => {
@@ -23,6 +23,9 @@ const Register = () => {
                 const signedUser = result.user;
                 console.log(signedUser);
                 updateUserData(signedUser, name, photo)
+                .then(() => {
+                    setReload(true)
+                })
                 form.reset()
             })
             .catch((error) => {

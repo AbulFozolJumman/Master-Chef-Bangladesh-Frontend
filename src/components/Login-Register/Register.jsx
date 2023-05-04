@@ -30,14 +30,6 @@ const Register = () => {
             });
     }
 
-    // Loading spinner
-    if(loading){
-        return <Button className="mx-auto m-5 d-block gap-3 align-items center d-flex" variant="primary" disabled>
-        <Spinner animation="border" variant="danger" />
-        <span className="fw-bold">Loading...</span>
-      </Button>
-    }
-
     return (
         <div>
             <Container className='w-25 mx-auto'>

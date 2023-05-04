@@ -16,6 +16,7 @@ const Login = () => {
     // User email/password sign in handler
     const handleUserSignIn = (event) => {
         event.preventDefault()
+        setError("")
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
@@ -35,6 +36,7 @@ const Login = () => {
 
     // User Google sign in handler
     const handleGoogleSignIn = () => {
+        setError("")
         googleSignIn()
             .then((result) => {
                 const googleUser = result.user;
@@ -50,6 +52,7 @@ const Login = () => {
 
     // User Github sign in handler
     const handleGithubSignIn = () => {
+        setError("")
         githubSignIn()
             .then((result) => {
                 const githubUser = result.user;
@@ -60,14 +63,6 @@ const Login = () => {
             .catch((error) => {
                 console.log(error.message);
             });
-    }
-
-    // Loading spinner
-    if(loading){
-        return <Button className="mx-auto m-5 d-block gap-3 align-items center d-flex" variant="primary" disabled>
-        <Spinner animation="border" variant="danger" />
-        <span className="fw-bold">Loading...</span>
-      </Button>
     }
 
     return (

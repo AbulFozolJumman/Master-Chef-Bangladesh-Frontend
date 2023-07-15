@@ -10,7 +10,7 @@ const Chefs = () => {
 
     return (
         <div>
-        <h2 className='text-center mt-5 mb-4'>Master Chefs of Bangladesh</h2>
+        <h2 className='text-center mt-5 mb-4 fw-bold'>Master Chefs of Bangladesh</h2>
             <Row xs={1} md={3} className="g-4 mb-5 container mx-auto">
                 {
                     chefs?.map(chef => <ChefCard key={chef.id} chef={chef}></ChefCard>)

@@ -6,6 +6,10 @@ import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner';
 import CustomerReview from '../CustomerReview/CustomerReview';
 import ServiceSection from '../OurServices/ServicesSection';
+import FeaturedRecipes from '../FeaturedRecipes/FeaturedRecipes';
+import CookingTips from '../Tips/Tips';
+import HealthTips from '../HealthTips/HealthTips';
+import SeasonalSpecials from '../SeasonalSpecials/SeasonalSpecials';
 
 // This is website Home page
 const Home = () => {
@@ -20,8 +24,12 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Chefs></Chefs>
+            <FeaturedRecipes></FeaturedRecipes>
+            <SeasonalSpecials></SeasonalSpecials>
             <CustomerReview></CustomerReview>
             <ServiceSection></ServiceSection>
+            <CookingTips></CookingTips>
+            <HealthTips></HealthTips>
         </div>
     );
 };

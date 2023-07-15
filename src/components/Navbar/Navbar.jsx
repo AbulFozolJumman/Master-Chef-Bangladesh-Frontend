@@ -21,9 +21,11 @@ const Navigation = () => {
     }
 
     return (
-        <Navbar className='mb-5' collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand className='fs-1 fw-bold' href="#home">Master Chef Bangladesh</Navbar.Brand>
+                <Navbar.Brand className='fs-1 fw-bold' href="#home">
+                    <img className='logo' src="https://i.ibb.co/WyKfM7s/logo.png" alt="" />
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">
@@ -37,7 +39,6 @@ const Navigation = () => {
                             </>
                             : <NavLink  className={({ isActive }) => (isActive ? 'active-link' : 'link')} to="/login">Login</NavLink>
                         }
-                        <NavLink  className={({ isActive }) => (isActive ? 'active-link' : 'link')} to="/error">Error</NavLink>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

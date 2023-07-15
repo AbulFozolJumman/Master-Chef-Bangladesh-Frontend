@@ -12,7 +12,6 @@ import Blog from './components/Blog/Blog';
 import Login from './components/Login-Register/Login';
 import Register from './components/Login-Register/Register';
 import ErrorPage from './components/Error/Error';
-import ShowError from './components/Error/ShowError';
 import ChefDetails from './components/ChefDetails/ChefDetails';
 import AuthProvider from './components/Provider/AuthProvider';
 import PrivateRoute from './components/PrivateRouter/PrivateRouter';
@@ -39,10 +38,6 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
-      },
-      {
-        path: "/error",
-        element: <ShowError></ShowError>
       },
       {
         path: "/ChefDetails",

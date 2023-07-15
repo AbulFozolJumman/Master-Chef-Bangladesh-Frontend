@@ -19,7 +19,7 @@ const ChefCard = ({ chef }) => {
                     <h4>Experience: {yearsOfExperience} Years</h4>
                     <h5>Number of Recipes: {numberOfRecipes}</h5>
                     <h5>Likes: {likes}</h5>
-                    <Link to="/ChefDetails" state={{ id }}>
+                    <Link to="/ChefDetails">
                         <button className='btn btn-primary'>View Recipes</button>
                     </Link>
 
